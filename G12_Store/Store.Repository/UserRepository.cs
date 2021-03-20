@@ -9,24 +9,34 @@ namespace Store.Repository
 {
     public class UserRepository : BaseRepository
     {
-
-        public int Login(string username, string password)
+        public int Login(string username, string password, out string message)
         {
-            _database.GetConnction();
-
-            var parameter = CustomSqlParameter("@responseID");
+            //var parameter = CustomSqlParameter("@responseID");
+            var loggedUserID = new SqlParameter("@LoggedUserID", SqlDbType.Int) { Direction = ParameterDirection.Output };
+            var responseMessage = new SqlParameter("@ResponseMessage", SqlDbType.NVarChar, size: 250) { Direction = ParameterDirection.Output };
+            var result = new SqlParameter("@Result", SqlDbType.Int) { Direction = ParameterDirection.ReturnValue };
 
             _database.ExecuteNonQuery(
                 "UserLogin_SP",
                 CommandType.StoredProcedure,
-                new SqlParameter("@Username", $"{username}"),
-                new SqlParameter("@Password", $"{password}"),
-                parameter
-                //new SqlParameter("@responseMessage", SqlDbType.NVarChar) {Direction = ParameterDirection.Output, Size = 100}
-                );
+                new SqlParameter("@Username", username),
+                new SqlParameter("@Password", password),
+                loggedUserID,
+                responseMessage,
+                result
+            );
 
-            return (int)parameter.Value;
+            if ((int)result.Value != 0)
+            {
+                //throw new Exception(responseMessage.Value.ToString());
+                message = responseMessage.Value.ToString();
+                return -1;
+            }
+
+            message = null;
+            return (int)loggedUserID.Value;
         }
+
         public void Add(User user)
         {
             

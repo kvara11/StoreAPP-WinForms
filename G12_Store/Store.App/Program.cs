@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Store.Repository;
+using System;
+using System.Windows.Forms;
 
 namespace Store.App
 {
@@ -20,7 +17,7 @@ namespace Store.App
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             var userRep = new UserRepository();
-            userRep.Login("Lasha5", "1235");
+            var userID = userRep.Login("Lasha", "123", out string message);
 
         }
     }
