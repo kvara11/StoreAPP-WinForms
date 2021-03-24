@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Store.Repository
 {
-    public class UserRepository : BaseRepository
+    public class UserRepository : BaseRepository<User>
     {
         public int Login(string username, string password, out string message)
         {
@@ -35,16 +35,6 @@ namespace Store.Repository
 
             message = null;
             return (int)loggedUserID.Value;
-        }
-
-
-        public SqlParameter CustomSqlParameter(string responseID)
-        {
-            var outparameter = new SqlParameter();
-            outparameter.ParameterName = responseID;
-            outparameter.SqlDbType = SqlDbType.Int;
-            outparameter.Direction = ParameterDirection.Output;
-            return outparameter;
         }
     }
 }
