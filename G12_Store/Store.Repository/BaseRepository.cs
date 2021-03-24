@@ -6,9 +6,14 @@ using System.Data.SqlClient;
 
 namespace Store.Repository
 {
-    public abstract class BaseRepository<T>
+    public abstract class BaseRepository<T> where T : class
     {
         protected Database _database;
+
+        protected virtual string RecordName => this.GetType().Name.Replace("Repository", "");
+        protected virtual string AddProcedureName => $"Add{RecordName}_SP";
+        protected virtual string EditProcedureName => $"Edit{RecordName}_SP";
+        protected virtual string DeleteProcedureName => $"Delete{RecordName}_SP";
 
         public BaseRepository()
         {
