@@ -37,20 +37,6 @@ namespace Store.Repository
             return (int)loggedUserID.Value;
         }
 
-        public void Add(User user)
-        {
-            
-        }
-
-        public void Edit(User user)
-        {
-
-        }
-
-        public void Delete(User user)
-        {
-
-        }
 
         public SqlParameter CustomSqlParameter(string responseID)
         {
