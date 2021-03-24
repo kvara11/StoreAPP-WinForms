@@ -23,17 +23,29 @@ namespace Store.Repository
         
         public void Add(T user)
         {
+            _database.ExecuteNonQuery(
+                AddProcedureName,
+                CommandType.StoredProcedure
 
+            );
         }
 
         public void Edit(T user)
         {
+            _database.ExecuteNonQuery(
+                AddProcedureName,
+                CommandType.StoredProcedure
 
+            );
         }
 
         public void Delete(T user)
         {
+            _database.ExecuteNonQuery(
+                AddProcedureName,
+                CommandType.StoredProcedure
 
+            );
         }
 
     }
