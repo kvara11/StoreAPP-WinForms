@@ -3,6 +3,7 @@ using DatabaseHelper;
 using Store.Domain;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace Store.Repository
 {
@@ -21,32 +22,35 @@ namespace Store.Repository
             _database = new Database("Server =.; Database = StoreG12; integrated security = true; pooling = true;");
         }
         
-        public void Add(T user)
+        public void Add(T data)
         {
-            _database.ExecuteNonQuery(
-                AddProcedureName,
-                CommandType.StoredProcedure
-
-            );
+            ExecuteObjectProcedure("Insert", data);
         }
 
-        public void Edit(T user)
+        public void Edit(T data)
         {
-            _database.ExecuteNonQuery(
-                AddProcedureName,
-                CommandType.StoredProcedure
-
-            );
+            ExecuteObjectProcedure("Update", data);
         }
 
-        public void Delete(T user)
+        public void Delete(T data)
         {
-            _database.ExecuteNonQuery(
-                AddProcedureName,
-                CommandType.StoredProcedure
-
-            );
+            ExecuteObjectProcedure("Delete", data);
         }
 
+        public void ExecuteObjectProcedure(string procPrefix, T data)
+        {
+            var SpName = procPrefix + data.ToString().Substring(data.ToString().LastIndexOf('.') + 1) + "_SP";
+            var propNames = data.GetType().GetProperties();
+            var sqlParameters = new List<SqlParameter>();
+            foreach (var prop in propNames)
+            {
+                sqlParameters.Add(new SqlParameter($"@{prop.Name}", prop.GetValue(data)));
+            };
+            _database.ExecuteNonQuery(
+                SpName,
+                CommandType.StoredProcedure,
+                sqlParameters.ToArray()
+                );
+        }
     }
 }
