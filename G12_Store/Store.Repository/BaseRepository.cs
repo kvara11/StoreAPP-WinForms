@@ -12,8 +12,8 @@ namespace Store.Repository
         protected Database _database;
 
         protected virtual string RecordName => this.GetType().Name.Replace("Repository", "");
-        protected virtual string AddProcedureName => $"Add{RecordName}_SP";
-        protected virtual string EditProcedureName => $"Edit{RecordName}_SP";
+        protected virtual string AddProcedureName => $"Insert{RecordName}_SP";
+        protected virtual string EditProcedureName => $"Update{RecordName}_SP";
         protected virtual string DeleteProcedureName => $"Delete{RecordName}_SP";
 
         public BaseRepository()
@@ -24,23 +24,17 @@ namespace Store.Repository
 
         public void Add(T data)
         {
-            var procedureName = ProcedureName("Insert", data.GetType());
-            var parameters = GetParamsFromObject(data);
-            ExecuteProcedure(procedureName, parameters);
+            ExecuteProcedure(AddProcedureName, GetParamsFromObject(data));
         }
 
         public void Edit(T data)
         {
-            var procedureName = ProcedureName("Update", data.GetType());
-            var parameters = GetParamsFromObject(data);
-            ExecuteProcedure(procedureName, parameters);
+            ExecuteProcedure(EditProcedureName, GetParamsFromObject(data));
         }
 
-        public virtual void Delete(T data)
+        public virtual void Delete(int id)
         {
-            var procedureName = ProcedureName("Delete", data.GetType());
-            var objectID = data.GetType().GetProperty("ID").GetValue(data);
-            ExecuteProcedure(procedureName, new SqlParameter() { ParameterName = "@ID", Value = objectID });
+            ExecuteProcedure(DeleteProcedureName, new SqlParameter() { ParameterName = "@ID", Value = id });
         }
 
         protected virtual SqlParameter[] GetParamsFromObject(T data)
@@ -61,11 +55,6 @@ namespace Store.Repository
                 CommandType.StoredProcedure,
                 sqlParams
             );
-        }
-
-        protected virtual string ProcedureName(string procPrefix, Type objType)
-        {
-            return procPrefix + objType.ToString().Substring(objType.ToString().LastIndexOf('.') + 1) + "_SP";
         }
     }
 }

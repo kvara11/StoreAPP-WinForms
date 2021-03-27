@@ -8,5 +8,6 @@ namespace Store.Domain
         public string Username { get; set; }
         public string Password { get; set; }
         public int PermissionGroupID { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
