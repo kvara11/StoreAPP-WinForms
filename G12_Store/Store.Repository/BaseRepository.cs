@@ -25,25 +25,25 @@ namespace Store.Repository
         public void Add(T data)
         {
             var procedureName = ProcedureName("Insert", data.GetType());
-            var DeserializedObject = DeserializeObject(data);
-            ExecuteProcedure(procedureName, DeserializedObject);
+            var parameters = GetParamsFromObject(data);
+            ExecuteProcedure(procedureName, parameters);
         }
 
         public void Edit(T data)
         {
             var procedureName = ProcedureName("Update", data.GetType());
-            var DeserializedObject = DeserializeObject(data);
-            ExecuteProcedure(procedureName, DeserializedObject);
+            var parameters = GetParamsFromObject(data);
+            ExecuteProcedure(procedureName, parameters);
         }
 
-        public void Delete(T data)
+        public virtual void Delete(T data)
         {
             var procedureName = ProcedureName("Delete", data.GetType());
             var objectID = data.GetType().GetProperty("ID").GetValue(data);
-            ExecuteProcedure(procedureName, new SqlParameter(){ParameterName = "@ID", Value = objectID });
+            ExecuteProcedure(procedureName, new SqlParameter() { ParameterName = "@ID", Value = objectID });
         }
 
-        protected virtual SqlParameter[] DeserializeObject(T data)
+        protected virtual SqlParameter[] GetParamsFromObject(T data)
         {
             var propNames = data.GetType().GetProperties();
             var sqlParameters = new List<SqlParameter>();
