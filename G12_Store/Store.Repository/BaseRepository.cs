@@ -21,36 +21,51 @@ namespace Store.Repository
             //todo: Move this to the config file.
             _database = new Database("Server =.; Database = StoreG12; integrated security = true; pooling = true;");
         }
-        
+
         public void Add(T data)
         {
-            ExecuteObjectProcedure("Insert", data);
+            var procedureName = ProcedureName("Insert", data.GetType());
+            var DeserializedObject = DeserializeObject(data);
+            ExecuteProcedure(procedureName, DeserializedObject);
         }
 
         public void Edit(T data)
         {
-            ExecuteObjectProcedure("Update", data);
+            var procedureName = ProcedureName("Update", data.GetType());
+            var DeserializedObject = DeserializeObject(data);
+            ExecuteProcedure(procedureName, DeserializedObject);
         }
 
         public void Delete(T data)
         {
-            ExecuteObjectProcedure("Delete", data);
+            var procedureName = ProcedureName("Delete", data.GetType());
+            var objectID = data.GetType().GetProperty("ID").GetValue(data);
+            ExecuteProcedure(procedureName, new SqlParameter(){ParameterName = "@ID", Value = objectID });
         }
 
-        public void ExecuteObjectProcedure(string procPrefix, T data)
+        protected virtual SqlParameter[] DeserializeObject(T data)
         {
-            var SpName = procPrefix + data.ToString().Substring(data.ToString().LastIndexOf('.') + 1) + "_SP";
             var propNames = data.GetType().GetProperties();
             var sqlParameters = new List<SqlParameter>();
             foreach (var prop in propNames)
             {
                 sqlParameters.Add(new SqlParameter($"@{prop.Name}", prop.GetValue(data)));
             };
+            return sqlParameters.ToArray();
+        }
+
+        protected virtual void ExecuteProcedure(string procName, params SqlParameter[] sqlParams)
+        {
             _database.ExecuteNonQuery(
-                SpName,
+                procName,
                 CommandType.StoredProcedure,
-                sqlParameters.ToArray()
-                );
+                sqlParams
+            );
+        }
+
+        protected virtual string ProcedureName(string procPrefix, Type objType)
+        {
+            return procPrefix + objType.ToString().Substring(objType.ToString().LastIndexOf('.') + 1) + "_SP";
         }
     }
 }

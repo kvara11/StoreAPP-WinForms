@@ -20,11 +20,11 @@ namespace Store.App
 
 
             var userRep = new UserRepository();
-            var user1 = new User() { ID = 2, Username = "Malgusss", Password = "1234", PermissionGroupID = 1 };
+            var user1 = new User() { ID = 2, Username = "Malgusss", Password = "123", PermissionGroupID = 1 };
             //userRep.Add(user1);
             //userRep.Edit(user1);
-            userRep.Delete(user1);
-            var userID = userRep.Login(user1.Username, user1.Password, out string message);
+            //userRep.Delete(user1);
+            //var userID = userRep.Login(user1.Username, user1.Password, out string message);
         }
     }
 }
