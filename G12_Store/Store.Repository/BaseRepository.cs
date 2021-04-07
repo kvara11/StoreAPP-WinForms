@@ -22,9 +22,14 @@ namespace Store.Repository
             _database = new Database("Server =.; Database = StoreG12; integrated security = true; pooling = true;");
         }
 
-        public void Add(T data)
+        public int Add(T data)
         {
-            ExecuteProcedure(AddProcedureName, GetParamsFromObject(data));
+            object result = _database.ExecuteScalar(
+                AddProcedureName,
+                CommandType.StoredProcedure,
+                GetParamsFromObject(data)
+            );
+            return Convert.ToInt32(result);
         }
 
         public void Edit(T data)

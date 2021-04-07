@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Store.Tests
 {
-    public class BaseTest
+    public abstract class BaseTest
     {
 
     }
