@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Store.App
 {
-   public static  class LocalStorage
+   public static class LocalStorage
     {
         public static int LoggedUserID { get; set; }
+        public static string UserFullName { get; set; }
     }
 }

@@ -9,11 +9,12 @@ namespace Store.Repository
 {
     public class UserRepository : BaseRepository<User>
     {
-        public int Login(string username, string password, out string message)
+        public int Login(string username, string password, out string fullName, out string message)
         {
             //var parameter = CustomSqlParameter("@responseID");
             var loggedUserID = new SqlParameter("@LoggedUserID", SqlDbType.Int) { Direction = ParameterDirection.Output };
             var responseMessage = new SqlParameter("@ResponseMessage", SqlDbType.NVarChar, size: 250) { Direction = ParameterDirection.Output };
+            var employeeName = new SqlParameter("@EmployeeName", SqlDbType.NVarChar, size: 100) { Direction = ParameterDirection.Output };
             var result = new SqlParameter("@Result", SqlDbType.Int) { Direction = ParameterDirection.ReturnValue };
 
             _database.ExecuteNonQuery(
@@ -22,6 +23,7 @@ namespace Store.Repository
                 new SqlParameter("@Username", username),
                 new SqlParameter("@Password", password),
                 loggedUserID,
+                employeeName,
                 responseMessage,
                 result
             );
@@ -30,10 +32,12 @@ namespace Store.Repository
             {
                 //throw new Exception(responseMessage.Value.ToString());
                 message = responseMessage.Value.ToString();
+                fullName = null;
                 return -1;
             }
 
             message = null;
+            fullName = employeeName.Value.ToString();
             return (int)loggedUserID.Value;
         }
     }

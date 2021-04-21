@@ -15,6 +15,7 @@ namespace Store.App
         public MainForm()
         {
             InitializeComponent();
+            this.Text += $" ({LocalStorage.UserFullName})";
         }
 
     }

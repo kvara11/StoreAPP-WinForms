@@ -16,9 +16,10 @@ namespace Store.App
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            LocalStorage.LoggedUserID = _userRepository.Login(txtUsername.Text, txtPassword.Text, out string message);
+            LocalStorage.LoggedUserID = _userRepository.Login(txtUsername.Text, txtPassword.Text, out string fullName, out string message);
             if (LocalStorage.LoggedUserID != -1)
             {
+                LocalStorage.UserFullName = fullName;
                 DialogResult = DialogResult.OK;
             }
             else
