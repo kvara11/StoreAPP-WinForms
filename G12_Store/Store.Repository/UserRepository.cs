@@ -9,6 +9,8 @@ namespace Store.Repository
 {
     public class UserRepository : BaseRepository<User>
     {
+        public event Action<int> UserLogin;
+
         public int Login(string username, string password, out string fullName, out string message)
         {
             //var parameter = CustomSqlParameter("@responseID");
@@ -38,7 +40,17 @@ namespace Store.Repository
 
             message = null;
             fullName = employeeName.Value.ToString();
+            UserLogin?.Invoke((int)loggedUserID.Value);
             return (int)loggedUserID.Value;
+        }
+
+        public IEnumerable<short> GetPermissions(int userID)
+        {
+            var dataTable = _database.GetTable("select Code from GetUserPermissions(@UserID)", new SqlParameter("@UserID", userID));
+            foreach (DataRow row in dataTable.Rows)
+            {
+                yield return (short)row["Code"];
+            }
         }
     }
 }

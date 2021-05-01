@@ -10,5 +10,6 @@ namespace Store.App
     {
         public static int LoggedUserID { get; set; }
         public static string UserFullName { get; set; }
+        public static IEnumerable<short> PermissionCodes { get; set; } = new List<short>();
     }
 }

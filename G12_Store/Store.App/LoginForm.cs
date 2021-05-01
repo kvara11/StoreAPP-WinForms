@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Store.Repository;
+using System.Linq;
 
 namespace Store.App
 {
@@ -12,6 +13,10 @@ namespace Store.App
         {
             InitializeComponent();
             _userRepository = new();
+            _userRepository.UserLogin += id =>
+            {
+                LocalStorage.PermissionCodes = _userRepository.GetPermissions(id).ToList();
+            };
         }
 
         private void btnOk_Click(object sender, EventArgs e)

@@ -9,7 +9,11 @@ namespace Store.Repository
 {
     public class PermissionRepository : BaseRepository<ProductSuplier>
     {
-
+        public bool CheckPermission(int userID, int permissionID)
+        {
+            return (bool)_database.ExecuteScalar($"select dbo.HasUserPermission({userID} ,{permissionID})", System.Data.CommandType.Text);
+            
+        }
 
     }
 }
