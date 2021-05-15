@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using Store.Repository;
+﻿using Store.Repository;
+using System;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Store.App
 {
@@ -17,6 +17,11 @@ namespace Store.App
             {
                 LocalStorage.PermissionCodes = _userRepository.GetPermissions(id).ToList();
             };
+#if DEBUG
+            txtUsername.Text = "Malgusss";
+            txtPassword.Text = "123";
+#endif
+
         }
 
         private void btnOk_Click(object sender, EventArgs e)
