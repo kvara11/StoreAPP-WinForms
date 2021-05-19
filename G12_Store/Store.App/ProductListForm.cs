@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Store.App.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,30 +8,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Store.App.Interfaces;
 
 namespace Store.App
 {
-    public partial class EmployeesListForm : Form, IListForm
+    public partial class ProductListForm : Form, IListForm
     {
-        public EmployeesListForm()
+        public ProductListForm()
         {
             InitializeComponent();
         }
 
         public void Add()
         {
-            MessageBox.Show("Employee Add");
-        }
-
-        public void Edit()
-        {
-
+            MessageBox.Show("Product Add");
         }
 
         public void Delete()
         {
+            MessageBox.Show("Deleted Add");
+        }
 
+        public void Edit()
+        {
+            MessageBox.Show("Edited Add");
         }
     }
 }

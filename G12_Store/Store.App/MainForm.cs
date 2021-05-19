@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Store.App.Interfaces;
+using System.Windows.Forms;
 
 namespace Store.App
 {
@@ -46,6 +47,17 @@ namespace Store.App
             {
                 MdiChildren[0].Close();
             }
+        }
+
+        private void newToolStripButton_Click(object sender, System.EventArgs e)
+        {
+            //((EmployeesListForm)ActiveMdiChild).Add();
+            (ActiveMdiChild as IListForm)?.Add();
+        }
+
+        private void mnuProductsList_Click(object sender, System.EventArgs e)
+        {
+            CreateMdiForm<ProductListForm>();
         }
     }
 }
