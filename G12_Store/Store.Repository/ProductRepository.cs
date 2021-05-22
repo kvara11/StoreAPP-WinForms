@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Store.Repository
 {
-    public class ProductRepository : BaseRepository<ProductSuplier>
+    public class ProductRepository : BaseRepository<Product>
     {
 
 

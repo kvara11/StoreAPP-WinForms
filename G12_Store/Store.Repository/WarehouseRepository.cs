@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Store.Repository
 {
-    public class WarehouseRepository : BaseRepository<User>
+    public class WarehouseRepository : BaseRepository<Warehouse>
     {
 
 

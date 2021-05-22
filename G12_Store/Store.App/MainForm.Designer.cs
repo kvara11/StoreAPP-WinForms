@@ -39,17 +39,6 @@ namespace Store.App
             this.mnuDeleteEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProducts = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProductsList = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSubItemConnect = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSubItemOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileSubItemExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSubItemConnection = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSubItemProfile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsSubItemImport = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsSubItemExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCascade = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHorizontal = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,6 +66,13 @@ namespace Store.App
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolsSubItemImport = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsSubItemExport = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSubItemConnection = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSubItemProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSubItemConnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSubItemOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSubItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,10 +82,6 @@ namespace Store.App
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuemployees,
             this.mnuProducts,
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.aboutToolStripMenuItem,
             this.mnuWindows});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -153,82 +145,6 @@ namespace Store.App
             this.mnuProductsList.Size = new System.Drawing.Size(167, 22);
             this.mnuProductsList.Text = "Manage Products";
             this.mnuProductsList.Click += new System.EventHandler(this.mnuProductsList_Click);
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileSubItemConnect,
-            this.fileSubItemOpen,
-            this.fileSubItemExit});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // fileSubItemConnect
-            // 
-            this.fileSubItemConnect.Name = "fileSubItemConnect";
-            this.fileSubItemConnect.Size = new System.Drawing.Size(119, 22);
-            this.fileSubItemConnect.Text = "Connect";
-            // 
-            // fileSubItemOpen
-            // 
-            this.fileSubItemOpen.Name = "fileSubItemOpen";
-            this.fileSubItemOpen.Size = new System.Drawing.Size(119, 22);
-            this.fileSubItemOpen.Text = "Open";
-            // 
-            // fileSubItemExit
-            // 
-            this.fileSubItemExit.Name = "fileSubItemExit";
-            this.fileSubItemExit.Size = new System.Drawing.Size(119, 22);
-            this.fileSubItemExit.Text = "Exit";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editSubItemConnection,
-            this.editSubItemProfile});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "&Edit";
-            // 
-            // editSubItemConnection
-            // 
-            this.editSubItemConnection.Name = "editSubItemConnection";
-            this.editSubItemConnection.Size = new System.Drawing.Size(136, 22);
-            this.editSubItemConnection.Text = "Connection";
-            // 
-            // editSubItemProfile
-            // 
-            this.editSubItemProfile.Name = "editSubItemProfile";
-            this.editSubItemProfile.Size = new System.Drawing.Size(136, 22);
-            this.editSubItemProfile.Text = "Profile";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolsSubItemImport,
-            this.toolsSubItemExport});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // toolsSubItemImport
-            // 
-            this.toolsSubItemImport.Name = "toolsSubItemImport";
-            this.toolsSubItemImport.Size = new System.Drawing.Size(110, 22);
-            this.toolsSubItemImport.Text = "Import";
-            // 
-            // toolsSubItemExport
-            // 
-            this.toolsSubItemExport.Name = "toolsSubItemExport";
-            this.toolsSubItemExport.Size = new System.Drawing.Size(110, 22);
-            this.toolsSubItemExport.Text = "Export";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
             // 
             // mnuWindows
             // 
@@ -450,6 +366,48 @@ namespace Store.App
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // toolsSubItemImport
+            // 
+            this.toolsSubItemImport.Name = "toolsSubItemImport";
+            this.toolsSubItemImport.Size = new System.Drawing.Size(110, 22);
+            this.toolsSubItemImport.Text = "Import";
+            // 
+            // toolsSubItemExport
+            // 
+            this.toolsSubItemExport.Name = "toolsSubItemExport";
+            this.toolsSubItemExport.Size = new System.Drawing.Size(110, 22);
+            this.toolsSubItemExport.Text = "Export";
+            // 
+            // editSubItemConnection
+            // 
+            this.editSubItemConnection.Name = "editSubItemConnection";
+            this.editSubItemConnection.Size = new System.Drawing.Size(136, 22);
+            this.editSubItemConnection.Text = "Connection";
+            // 
+            // editSubItemProfile
+            // 
+            this.editSubItemProfile.Name = "editSubItemProfile";
+            this.editSubItemProfile.Size = new System.Drawing.Size(136, 22);
+            this.editSubItemProfile.Text = "Profile";
+            // 
+            // fileSubItemConnect
+            // 
+            this.fileSubItemConnect.Name = "fileSubItemConnect";
+            this.fileSubItemConnect.Size = new System.Drawing.Size(119, 22);
+            this.fileSubItemConnect.Text = "Connect";
+            // 
+            // fileSubItemOpen
+            // 
+            this.fileSubItemOpen.Name = "fileSubItemOpen";
+            this.fileSubItemOpen.Size = new System.Drawing.Size(119, 22);
+            this.fileSubItemOpen.Text = "Open";
+            // 
+            // fileSubItemExit
+            // 
+            this.fileSubItemExit.Name = "fileSubItemExit";
+            this.fileSubItemExit.Size = new System.Drawing.Size(119, 22);
+            this.fileSubItemExit.Text = "Exit";
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -475,10 +433,7 @@ namespace Store.App
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileSubItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
@@ -489,14 +444,6 @@ namespace Store.App
         private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fileSubItemConnect;
-        private System.Windows.Forms.ToolStripMenuItem fileSubItemOpen;
-        private System.Windows.Forms.ToolStripMenuItem fileSubItemExit;
-        private System.Windows.Forms.ToolStripMenuItem editSubItemConnection;
-        private System.Windows.Forms.ToolStripMenuItem editSubItemProfile;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsSubItemImport;
-        private System.Windows.Forms.ToolStripMenuItem toolsSubItemExport;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuemployees;
         private System.Windows.Forms.ToolStripMenuItem mnuEmployeesList;
@@ -522,6 +469,13 @@ namespace Store.App
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem mnuProducts;
         private System.Windows.Forms.ToolStripMenuItem mnuProductsList;
+        private System.Windows.Forms.ToolStripMenuItem toolsSubItemImport;
+        private System.Windows.Forms.ToolStripMenuItem toolsSubItemExport;
+        private System.Windows.Forms.ToolStripMenuItem editSubItemConnection;
+        private System.Windows.Forms.ToolStripMenuItem editSubItemProfile;
+        private System.Windows.Forms.ToolStripMenuItem fileSubItemConnect;
+        private System.Windows.Forms.ToolStripMenuItem fileSubItemOpen;
+        private System.Windows.Forms.ToolStripMenuItem fileSubItemExit;
     }
 }
 

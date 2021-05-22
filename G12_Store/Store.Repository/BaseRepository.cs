@@ -1,17 +1,18 @@
-﻿using System;
-using DatabaseHelper;
-using Store.Domain;
+﻿using DatabaseHelper;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Collections.Generic;
 
 namespace Store.Repository
 {
-    public abstract class BaseRepository<T> where T : class
+    public abstract class BaseRepository<T> where T : class, new()
     {
         protected Database _database;
 
         protected virtual string RecordName => this.GetType().Name.Replace("Repository", "");
+        protected virtual string GetProcedureName => $"Get{RecordName}_SP";
+        protected virtual string SelectProcedureName => $"Select{RecordName}_SP";
         protected virtual string AddProcedureName => $"Insert{RecordName}_SP";
         protected virtual string EditProcedureName => $"Update{RecordName}_SP";
         protected virtual string DeleteProcedureName => $"Delete{RecordName}_SP";
@@ -22,19 +23,42 @@ namespace Store.Repository
             _database = new Database("Server =.; Database = StoreG12; integrated security = true; pooling = true;");
         }
 
+        public T RowToObject(DataRow row)
+        {
+            var result = new T();
+
+            var propNames = result.GetType().GetProperties();
+            foreach (var prop in propNames)
+            {
+                var value = row[prop.Name];
+                prop.SetValue(result, value);
+            };
+            return result;
+        }
+
+        public T Get(int id)
+        {
+            DataTable result = _database.GetTable(
+                GetProcedureName,
+                CommandType.StoredProcedure,
+                new SqlParameter("@ID", id)
+            );
+            return RowToObject(result.Rows[0]);
+        }
+
         public int Add(T data)
         {
             object result = _database.ExecuteScalar(
                 AddProcedureName,
                 CommandType.StoredProcedure,
-                GetParamsFromObject(data)
+                ObjectToParameters(data)
             );
             return Convert.ToInt32(result);
         }
 
         public void Edit(T data)
         {
-            ExecuteProcedure(EditProcedureName, GetParamsFromObject(data));
+            ExecuteProcedure(EditProcedureName, ObjectToParameters(data));
         }
 
         public virtual void Delete(int id)
@@ -42,7 +66,7 @@ namespace Store.Repository
             ExecuteProcedure(DeleteProcedureName, new SqlParameter() { ParameterName = "@ID", Value = id });
         }
 
-        protected virtual SqlParameter[] GetParamsFromObject(T data)
+        protected virtual SqlParameter[] ObjectToParameters(T data)
         {
             var propNames = data.GetType().GetProperties();
             var sqlParameters = new List<SqlParameter>();

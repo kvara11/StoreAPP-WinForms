@@ -20,7 +20,8 @@ namespace Store.App
 
         public void Add()
         {
-            MessageBox.Show("Employee Add");
+            var newEmpForm = new AddEmployeeFormcs();
+            newEmpForm.Show();
         }
 
         public void Edit()

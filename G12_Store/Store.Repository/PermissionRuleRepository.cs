@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Store.Repository
 {
-    public class PermissionRuleRepository : BaseRepository<ProductSuplier>
+    public class PermissionRuleRepository : BaseRepository<PermissionRule>
     {
 
 

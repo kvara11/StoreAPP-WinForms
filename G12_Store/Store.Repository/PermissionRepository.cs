@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Store.Repository
 {
-    public class PermissionRepository : BaseRepository<ProductSuplier>
+    public class PermissionRepository : BaseRepository<Permission>
     {
         public bool CheckPermission(int userID, int permissionID)
         {
