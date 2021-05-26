@@ -35,7 +35,7 @@ namespace Store.App
             newEmployee.IdNumber = txtNewEmployeeIDnumber.Text;
             newEmployee.IdCardNumber = txtNewEmployeeIDserialnumber.Text;
             newEmployee.DateRegister = new DateTime(1999, 11, 11);
-            newEmployee.Gender = comboxNewEmployeeGender.Text.Contains("Male") ? true : false;
+            newEmployee.Gender = comboxNewEmployeeGender.Text.Contains("Male") ? "Male" : "Female";
 
             var empRep = new EmployeeRepository();
             empRep.Add(newEmployee);

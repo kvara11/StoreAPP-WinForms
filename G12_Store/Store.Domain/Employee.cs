@@ -7,7 +7,7 @@ namespace Store.Domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
-        public bool Gender { get; set; }
+        public string Gender { get; set; }
         public string Phone { get; set; }
         public string Phone2 { get; set; }
         public string CurrentAddress { get; set; }

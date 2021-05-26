@@ -12,7 +12,7 @@ namespace Store.Repository
 
         protected virtual string RecordName => this.GetType().Name.Replace("Repository", "");
         protected virtual string GetProcedureName => $"Get{RecordName}_SP";
-        protected virtual string SelectProcedureName => $"Select{RecordName}_SP";
+        protected virtual string SelectProcedureName => $"Get{RecordName}List_SP";
         protected virtual string AddProcedureName => $"Insert{RecordName}_SP";
         protected virtual string EditProcedureName => $"Update{RecordName}_SP";
         protected virtual string DeleteProcedureName => $"Delete{RecordName}_SP";
@@ -23,7 +23,7 @@ namespace Store.Repository
             _database = new Database("Server =.; Database = StoreG12; integrated security = true; pooling = true;");
         }
 
-        public T RowToObject(DataRow row)
+        protected T RowToObject(DataRow row)
         {
             var result = new T();
 
@@ -31,7 +31,7 @@ namespace Store.Repository
             foreach (var prop in propNames)
             {
                 var value = row[prop.Name];
-                prop.SetValue(result, value);
+                prop.SetValue(result, value != DBNull.Value ? value : default);
             };
             return result;
         }
@@ -44,6 +44,20 @@ namespace Store.Repository
                 new SqlParameter("@ID", id)
             );
             return RowToObject(result.Rows[0]);
+        }
+
+        public IEnumerable<T> Select(string searchPatern = "")
+        {
+            DataTable result = _database.GetTable(
+                SelectProcedureName,
+                CommandType.StoredProcedure,
+                new SqlParameter("@SearchPatern", searchPatern)
+            );
+            foreach (DataRow row in result.Rows)
+            {
+               yield return RowToObject(row);
+               //todo: gadavxedot yields!!
+            }
         }
 
         public int Add(T data)
