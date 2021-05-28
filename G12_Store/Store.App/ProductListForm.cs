@@ -1,4 +1,5 @@
 ﻿using Store.App.Interfaces;
+using Store.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,13 @@ namespace Store.App
 {
     public partial class ProductListForm : Form, IListForm
     {
+        private readonly ProductRepository _productRepository;
         public ProductListForm()
         {
             InitializeComponent();
-        }
+            _productRepository = new ProductRepository();
+            grdProductList.DataSource = _productRepository.Select().ToList();
+        }   
 
         public void Add()
         {
@@ -25,12 +29,12 @@ namespace Store.App
 
         public void Delete()
         {
-            MessageBox.Show("Deleted Add");
+            MessageBox.Show("Product Deleted");
         }
 
         public void Edit()
         {
-            MessageBox.Show("Edited Add");
+            MessageBox.Show("Product Edited ");
         }
     }
 }

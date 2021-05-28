@@ -20,7 +20,7 @@ namespace Store.Repository
         public BaseRepository()
         {
             //todo: Move this to the config file.
-            _database = new Database("Server =.; Database = StoreG12; integrated security = true; pooling = true;");
+            _database = new Database(@"Server =LADO\G12; Database = G12DB; integrated security = true; pooling = true;");
         }
 
         protected T RowToObject(DataRow row)
