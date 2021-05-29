@@ -29,36 +29,38 @@ namespace Store.App
         /// </summary>
         private void InitializeComponent()
         {
-            this.grdListEmployees = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.grdListEmployees)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // grdListEmployees
-            // 
-            this.grdListEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdListEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdListEmployees.Location = new System.Drawing.Point(0, 0);
-            this.grdListEmployees.Name = "grdListEmployees";
-            this.grdListEmployees.RowTemplate.Height = 25;
-            this.grdListEmployees.Size = new System.Drawing.Size(642, 354);
-            this.grdListEmployees.TabIndex = 0;
-            // 
-            // EmployeesListForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 354);
-            this.Controls.Add(this.grdListEmployees);
-            this.Name = "EmployeesListForm";
-            this.Text = "EmployeesListForm";
-            this.Load += new System.EventHandler(this.EmployeesListForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdListEmployees)).EndInit();
-            this.ResumeLayout(false);
+			this.grdListEmployees = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.grdListEmployees)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// grdListEmployees
+			// 
+			this.grdListEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.grdListEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.grdListEmployees.Location = new System.Drawing.Point(0, 0);
+			this.grdListEmployees.Name = "grdListEmployees";
+			this.grdListEmployees.ReadOnly = true;
+			this.grdListEmployees.RowTemplate.Height = 25;
+			this.grdListEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.grdListEmployees.Size = new System.Drawing.Size(642, 354);
+			this.grdListEmployees.TabIndex = 0;
+			// 
+			// EmployeesListForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(642, 354);
+			this.Controls.Add(this.grdListEmployees);
+			this.Name = "EmployeesListForm";
+			this.Text = "EmployeesListForm";
+			this.Load += new System.EventHandler(this.EmployeesListForm_Load);
+			((System.ComponentModel.ISupportInitialize)(this.grdListEmployees)).EndInit();
+			this.ResumeLayout(false);
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView grdListEmployees;
-    }
+	}
 }

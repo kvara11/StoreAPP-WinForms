@@ -12,35 +12,43 @@ using Store.Repository;
 
 namespace Store.App
 {
-    public partial class EmployeesListForm : Form, IListForm
-    {
-        private readonly EmployeeRepository _employeeRepository;
+	public partial class EmployeesListForm : Form, IListForm
+	{
+		private readonly EmployeeRepository _employeeRepository;
 
-        public EmployeesListForm()
-        {
-            InitializeComponent();
-            _employeeRepository = new EmployeeRepository();
-            grdListEmployees.DataSource = _employeeRepository.Select().ToList();
-        }
+		public EmployeesListForm()
+		{
+			InitializeComponent();
+			_employeeRepository = new EmployeeRepository();
+			grdListEmployees.DataSource = _employeeRepository.Select().ToList();
+			grdListEmployees.Columns[0].Visible = false;
+			grdListEmployees.Columns[0].Frozen = true;
+			grdListEmployees.Columns[1].Frozen = true;
+			grdListEmployees.Columns[2].Frozen = true;
+			grdListEmployees.Columns[grdListEmployees.Columns.Count - 1].Visible = false;
+		}
 
-        public void Add()
-        {
-            var newEmpForm = new AddEmployeeFormcs();
-            newEmpForm.Show();
-        }
+		public void Add()
+		{
+			var newEmpForm = new AddEmployeeFormcs();
+			if (newEmpForm.ShowDialog() != DialogResult.OK)
+			{
+				//damatebis mere List unda daarefresh-ot
+			}
+		}
 
-        public void Edit()
-        {
+		public void Edit()
+		{
 
-        }
+		}
 
-        public void Delete()
-        {
+		public void Delete()
+		{
 
-        }
+		}
 
-        private void EmployeesListForm_Load(object sender, EventArgs e)
-        {
-        }
-    }
+		private void EmployeesListForm_Load(object sender, EventArgs e)
+		{
+		}
+	}
 }
