@@ -29,19 +29,35 @@ namespace Store.App
         /// </summary>
         private void InitializeComponent()
         {
+            this.grdProductList = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProductList)).BeginInit();
             this.SuspendLayout();
+            // 
+            // grdProductList
+            // 
+            this.grdProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProductList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdProductList.Location = new System.Drawing.Point(0, 0);
+            this.grdProductList.Name = "grdProductList";
+            this.grdProductList.RowTemplate.Height = 25;
+            this.grdProductList.Size = new System.Drawing.Size(572, 335);
+            this.grdProductList.TabIndex = 0;
             // 
             // ProductListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 335);
+            this.Controls.Add(this.grdProductList);
             this.Name = "ProductListForm";
             this.Text = "ProductListForm";
+            ((System.ComponentModel.ISupportInitialize)(this.grdProductList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView grdProductList;
     }
 }
