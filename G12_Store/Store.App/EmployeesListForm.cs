@@ -31,10 +31,11 @@ namespace Store.App
 		public void Add()
 		{
 			var newEmpForm = new AddEmployeeFormcs();
-			if (newEmpForm.ShowDialog() != DialogResult.OK)
-			{
-				//damatebis mere List unda daarefresh-ot
-			}
+			//if (newEmpForm.ShowDialog() != DialogResult.OK)
+			//{
+			//	//damatebis mere List unda daarefresh-ot
+			//}
+			newEmpForm.Show();
 		}
 
 		public void Edit()
