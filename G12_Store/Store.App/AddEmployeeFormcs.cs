@@ -25,7 +25,7 @@ namespace Store.App
 
             newEmployee.FirstName = txtNewEmployeeFirstName.Text;
             newEmployee.LastName = txtNewEmployeeLastName.Text;
-            newEmployee.BirthDate = new DateTime(Convert.ToInt32(txtNewEmployeeYear.Text), Convert.ToInt32(txtNewEmployeeMonth.Text), Convert.ToInt32(txtNewEmployeeDay.Text));
+            newEmployee.BirthDate = dateTimePicker.Value;
             newEmployee.Phone = txtNewEmployeePhone.Text;
             newEmployee.Phone2 = txtNewEmployeePhone2.Text;
             newEmployee.CurrentAddress = txtNewEmployeeCurrentAddress.Text;
