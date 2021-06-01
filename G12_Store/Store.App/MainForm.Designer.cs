@@ -76,6 +76,7 @@ namespace Store.App
             this.mnuUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.allUsersToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserTollStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -421,6 +422,7 @@ namespace Store.App
             // 
             this.mnuUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.allUsersToolStrip,
+            this.toolStripSeparator6,
             this.addUserTollStrip});
             this.mnuUsers.Name = "mnuUsers";
             this.mnuUsers.Size = new System.Drawing.Size(58, 24);
@@ -437,6 +439,11 @@ namespace Store.App
             this.addUserTollStrip.Name = "addUserTollStrip";
             this.addUserTollStrip.Size = new System.Drawing.Size(224, 26);
             this.addUserTollStrip.Text = "Add";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(221, 6);
             // 
             // MainForm
             // 
@@ -510,6 +517,7 @@ namespace Store.App
         private System.Windows.Forms.ToolStripMenuItem mnuUsers;
         private System.Windows.Forms.ToolStripMenuItem allUsersToolStrip;
         private System.Windows.Forms.ToolStripMenuItem addUserTollStrip;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }
 }
 
