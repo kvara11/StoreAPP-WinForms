@@ -20,6 +20,14 @@ namespace Store.App
             InitializeComponent();
             _productRepository = new ProductRepository();
             grdProductList.DataSource = _productRepository.Select().ToList();
+            grdProductList.Columns[0].Frozen = true;
+            grdProductList.Columns[0].Visible = false;
+            grdProductList.Columns[1].Frozen = true;
+            grdProductList.Columns[2].Visible = false;
+            grdProductList.Columns[3].Visible = false;
+            grdProductList.Columns[7].Visible = false;
+            grdProductList.Columns[grdProductList.Columns.Count - 1].Visible = false;
+
         }   
 
         public void Add()
