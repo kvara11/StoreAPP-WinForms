@@ -73,9 +73,9 @@ namespace Store.App
             this.fileSubItemConnect = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSubItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.fileSubItemExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.allUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsers = new System.Windows.Forms.ToolStripMenuItem();
+            this.allUsersToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUserTollStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,8 +86,8 @@ namespace Store.App
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuemployees,
             this.mnuProducts,
-            this.mnuWindows,
-            this.usersToolStripMenuItem});
+            this.mnuUsers,
+            this.mnuWindows});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
@@ -417,26 +417,26 @@ namespace Store.App
             this.fileSubItemExit.Size = new System.Drawing.Size(119, 22);
             this.fileSubItemExit.Text = "Exit";
             // 
-            // usersToolStripMenuItem
+            // mnuUsers
             // 
-            this.usersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allUsersToolStripMenuItem,
-            this.addToolStripMenuItem});
-            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.usersToolStripMenuItem.Text = "Users";
+            this.mnuUsers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allUsersToolStrip,
+            this.addUserTollStrip});
+            this.mnuUsers.Name = "mnuUsers";
+            this.mnuUsers.Size = new System.Drawing.Size(58, 24);
+            this.mnuUsers.Text = "Users";
             // 
-            // allUsersToolStripMenuItem
+            // allUsersToolStrip
             // 
-            this.allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            this.allUsersToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.allUsersToolStripMenuItem.Text = "All Users";
+            this.allUsersToolStrip.Name = "allUsersToolStrip";
+            this.allUsersToolStrip.Size = new System.Drawing.Size(224, 26);
+            this.allUsersToolStrip.Text = "All Users";
             // 
-            // addToolStripMenuItem
+            // addUserTollStrip
             // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.addToolStripMenuItem.Text = "Add";
+            this.addUserTollStrip.Name = "addUserTollStrip";
+            this.addUserTollStrip.Size = new System.Drawing.Size(224, 26);
+            this.addUserTollStrip.Text = "Add";
             // 
             // MainForm
             // 
@@ -507,9 +507,9 @@ namespace Store.App
         private System.Windows.Forms.ToolStripMenuItem fileSubItemConnect;
         private System.Windows.Forms.ToolStripMenuItem fileSubItemOpen;
         private System.Windows.Forms.ToolStripMenuItem fileSubItemExit;
-        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem allUsersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsers;
+        private System.Windows.Forms.ToolStripMenuItem allUsersToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem addUserTollStrip;
     }
 }
 
