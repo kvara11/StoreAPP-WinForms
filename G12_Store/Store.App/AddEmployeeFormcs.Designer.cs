@@ -51,8 +51,8 @@ namespace Store.App
             this.lblNewEmployeeIDserialnumber = new System.Windows.Forms.Label();
             this.lblNewEmployeeGender = new System.Windows.Forms.Label();
             this.comboxNewEmployeeGender = new System.Windows.Forms.ComboBox();
-            this.btnNewEmployeeSubmit = new System.Windows.Forms.Button();
-            this.btnNewEmployeeCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.txtNewEmployeePhone = new System.Windows.Forms.TextBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
@@ -258,27 +258,26 @@ namespace Store.App
             this.comboxNewEmployeeGender.Size = new System.Drawing.Size(201, 28);
             this.comboxNewEmployeeGender.TabIndex = 30;
             // 
-            // btnNewEmployeeSubmit
+            // btnOk
             // 
-            this.btnNewEmployeeSubmit.Location = new System.Drawing.Point(126, 512);
-            this.btnNewEmployeeSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnNewEmployeeSubmit.Name = "btnNewEmployeeSubmit";
-            this.btnNewEmployeeSubmit.Size = new System.Drawing.Size(95, 31);
-            this.btnNewEmployeeSubmit.TabIndex = 31;
-            this.btnNewEmployeeSubmit.Text = "Submit";
-            this.btnNewEmployeeSubmit.UseVisualStyleBackColor = true;
-            this.btnNewEmployeeSubmit.Click += new System.EventHandler(this.btnNewEmployeeSubmit_Click);
+            this.btnOk.Location = new System.Drawing.Point(126, 512);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(95, 31);
+            this.btnOk.TabIndex = 31;
+            this.btnOk.Text = "Add";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // btnNewEmployeeCancel
+            // btnCancel
             // 
-            this.btnNewEmployeeCancel.Location = new System.Drawing.Point(227, 512);
-            this.btnNewEmployeeCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnNewEmployeeCancel.Name = "btnNewEmployeeCancel";
-            this.btnNewEmployeeCancel.Size = new System.Drawing.Size(99, 31);
-            this.btnNewEmployeeCancel.TabIndex = 32;
-            this.btnNewEmployeeCancel.Text = "Cancel";
-            this.btnNewEmployeeCancel.UseVisualStyleBackColor = true;
-            this.btnNewEmployeeCancel.Click += new System.EventHandler(this.btnNewEmployeeCancel_Click);
+            this.btnCancel.Location = new System.Drawing.Point(227, 512);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(99, 31);
+            this.btnCancel.TabIndex = 32;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // txtNewEmployeePhone
             // 
@@ -299,12 +298,14 @@ namespace Store.App
             // 
             // AddEmployeeFormcs
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(350, 569);
             this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.btnNewEmployeeCancel);
-            this.Controls.Add(this.btnNewEmployeeSubmit);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.comboxNewEmployeeGender);
             this.Controls.Add(this.lblNewEmployeeGender);
             this.Controls.Add(this.txtNewEmployeeIDserialnumber);
@@ -328,8 +329,12 @@ namespace Store.App
             this.Controls.Add(this.txtNewEmployeeFirstName);
             this.Controls.Add(this.lblNewEmployeeLastName);
             this.Controls.Add(this.lblNewEmployeeFirstName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddEmployeeFormcs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Employee";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -360,8 +365,8 @@ namespace Store.App
         private System.Windows.Forms.Label lblNewEmployeeIDserialnumber;
         private System.Windows.Forms.Label lblNewEmployeeGender;
         private System.Windows.Forms.ComboBox comboxNewEmployeeGender;
-        private System.Windows.Forms.Button btnNewEmployeeSubmit;
-        private System.Windows.Forms.Button btnNewEmployeeCancel;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtNewEmployeePhone;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
     }

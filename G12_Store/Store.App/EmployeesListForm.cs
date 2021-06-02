@@ -31,11 +31,7 @@ namespace Store.App
 		public void Add()
 		{
 			var newEmpForm = new AddEmployeeFormcs();
-			//if (newEmpForm.ShowDialog() != DialogResult.OK)
-			//{
-			//	//damatebis mere List unda daarefresh-ot
-			//}
-			newEmpForm.Show();
+			newEmpForm.ShowDialog();
 		}
 
 		public void Edit()
@@ -48,8 +44,19 @@ namespace Store.App
 
 		}
 
-		private void EmployeesListForm_Load(object sender, EventArgs e)
-		{
+        private void grdListEmployees_MouseClick(object sender, MouseEventArgs e)
+        {
+			//int position = grdListEmployees.HitTest(e.X, e.Y).RowIndex;
+
+			//if (e.Button == MouseButtons.Left && position >= 0)
+			//{
+			//	cntxMenuEmpl.Show(grdListEmployees, new Point(e.X, e.Y));
+   //         }
+   //         else
+   //         {
+			//	cntxMenuEmpl.Hide();
+   //         }
 		}
-	}
+
+    }
 }

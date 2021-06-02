@@ -31,17 +31,17 @@ namespace Store.App
         {
             this.components = new System.ComponentModel.Container();
             this.grdListEmployees = new System.Windows.Forms.DataGridView();
-            this.cntxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cntxMenuEmpl = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdListEmployees)).BeginInit();
-            this.cntxMenu.SuspendLayout();
+            this.cntxMenuEmpl.SuspendLayout();
             this.SuspendLayout();
             // 
             // grdListEmployees
             // 
             this.grdListEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdListEmployees.ContextMenuStrip = this.cntxMenuEmpl;
             this.grdListEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdListEmployees.Location = new System.Drawing.Point(0, 0);
             this.grdListEmployees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -52,22 +52,16 @@ namespace Store.App
             this.grdListEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdListEmployees.Size = new System.Drawing.Size(734, 472);
             this.grdListEmployees.TabIndex = 0;
+            this.grdListEmployees.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdListEmployees_MouseClick);
             // 
-            // cntxMenu
+            // cntxMenuEmpl
             // 
-            this.cntxMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cntxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
+            this.cntxMenuEmpl.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cntxMenuEmpl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
-            this.cntxMenu.Name = "cntxMenu";
-            this.cntxMenu.Size = new System.Drawing.Size(123, 76);
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
-            this.addToolStripMenuItem.Text = "Add";
+            this.cntxMenuEmpl.Name = "cntxMenu";
+            this.cntxMenuEmpl.Size = new System.Drawing.Size(123, 52);
             // 
             // editToolStripMenuItem
             // 
@@ -86,14 +80,13 @@ namespace Store.App
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 472);
-            this.ContextMenuStrip = this.cntxMenu;
+            this.ContextMenuStrip = this.cntxMenuEmpl;
             this.Controls.Add(this.grdListEmployees);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EmployeesListForm";
             this.Text = "EmployeesListForm";
-            this.Load += new System.EventHandler(this.EmployeesListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdListEmployees)).EndInit();
-            this.cntxMenu.ResumeLayout(false);
+            this.cntxMenuEmpl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -101,8 +94,7 @@ namespace Store.App
         #endregion
 
         private System.Windows.Forms.DataGridView grdListEmployees;
-        private System.Windows.Forms.ContextMenuStrip cntxMenu;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip cntxMenuEmpl;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
