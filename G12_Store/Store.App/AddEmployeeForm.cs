@@ -12,7 +12,7 @@ using Store.Repository;
 
 namespace Store.App
 {
-    public partial class AddEmployeeFormcs : Form
+    public partial class AddEmployeeForm : Form
     {
         private readonly int _id;
         private readonly EmployeeRepository _employeeRepository;
@@ -20,7 +20,7 @@ namespace Store.App
 
         public bool IsEditMode => _id != 0;
 
-        public AddEmployeeFormcs(int id = 0)
+        public AddEmployeeForm(int id = 0)
         {
             InitializeComponent();
             _id = id;

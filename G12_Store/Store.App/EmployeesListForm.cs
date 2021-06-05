@@ -28,15 +28,19 @@ namespace Store.App
 			grdListEmployees.Columns[grdListEmployees.Columns.Count - 1].Visible = false;
 		}
 
+		private int SelectedID => (int)grdListEmployees.SelectedRows[0].Cells[0].Value;
+
 		public void Add()
 		{
-			var newEmpForm = new AddEmployeeFormcs();
-			newEmpForm.ShowDialog();
+			var employeeForm = new AddEmployeeForm();
+			employeeForm.ShowDialog();
 		}
 
 		public void Edit()
 		{
-
+			int id = SelectedID;
+			var employeeForm = new AddEmployeeForm(id);
+			employeeForm.ShowDialog();
 		}
 
 		public void Delete()
@@ -58,5 +62,14 @@ namespace Store.App
    //         }
 		}
 
-    }
+		private void editToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Edit();
+		}
+
+		private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Delete();
+		}
+	}
 }
