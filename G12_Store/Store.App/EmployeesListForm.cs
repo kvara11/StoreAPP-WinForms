@@ -30,6 +30,7 @@ namespace Store.App
 
 		private int SelectedID => (int)grdListEmployees.SelectedRows[0].Cells[0].Value;
 
+		private int RightClickedID = -1;
 		public void Add()
 		{
 			var employeeForm = new AddEmployeeForm();
@@ -41,25 +42,26 @@ namespace Store.App
 			int id = SelectedID;
 			var employeeForm = new AddEmployeeForm(id);
 			employeeForm.ShowDialog();
+			grdListEmployees.DataSource = _employeeRepository.Select().ToList();
 		}
 
 		public void Delete()
 		{
-
+			int id = SelectedID != 0 ? SelectedID : RightClickedID;
+			
+			DialogResult res = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+			if (res == DialogResult.OK)
+			{
+				var sad = new EmployeeRepository();
+				sad.Delete(id);
+				grdListEmployees.DataSource = _employeeRepository.Select().ToList();
+			}
 		}
 
-        private void grdListEmployees_MouseClick(object sender, MouseEventArgs e)
+		private void grdListEmployees_MouseClick(object sender, MouseEventArgs e)
         {
-			//int position = grdListEmployees.HitTest(e.X, e.Y).RowIndex;
+			
 
-			//if (e.Button == MouseButtons.Left && position >= 0)
-			//{
-			//	cntxMenuEmpl.Show(grdListEmployees, new Point(e.X, e.Y));
-   //         }
-   //         else
-   //         {
-			//	cntxMenuEmpl.Hide();
-   //         }
 		}
 
 		private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,5 +73,15 @@ namespace Store.App
 		{
 			Delete();
 		}
-	}
+
+        private void grdListEmployees_MouseDown(object sender, MouseEventArgs e)
+        {
+			if (e.Button == MouseButtons.Right)
+			{
+				var hti = grdListEmployees.HitTest(e.X, e.Y);
+				grdListEmployees.ClearSelection();
+				grdListEmployees.Rows[hti.RowIndex].Selected = true;
+			}
+		}
+    }
 }

@@ -41,6 +41,18 @@ namespace Store.App
         {
             _employee = _employeeRepository.Get(_id);
             //wamovigot bazidan info da gamovitanot vizualur komponentebshi
+            txtNewEmployeeFirstName.Text = _employee.FirstName;
+            txtNewEmployeeLastName.Text = _employee.LastName;
+            dateTimePicker.Value = _employee.BirthDate == DateTime.MinValue ? new DateTime(1999, 11, 11) : _employee.BirthDate;
+            txtNewEmployeePhone.Text = _employee.Phone;
+            txtNewEmployeePhone2.Text = _employee.Phone2;
+            txtNewEmployeeCurrentAddress.Text = _employee.CurrentAddress;
+            txtNewEmployeeLegalAddress.Text = _employee.LegalAddress;
+            txtNewEmployeePostalCode.Text = _employee.PostalCode;
+            txtNewEmployeeEmail.Text = _employee.Email;
+            txtNewEmployeeIDnumber.Text = _employee.IdNumber;
+            txtNewEmployeeIDserialnumber.Text = _employee.IdCardNumber;
+            comboxNewEmployeeGender.Text = _employee.Gender;
         }
 
         private void SaveData()
