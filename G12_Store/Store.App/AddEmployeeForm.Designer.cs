@@ -1,7 +1,7 @@
 ﻿
 namespace Store.App
 {
-    partial class AddEmployeeFormcs
+    partial class AddEmployeeForm
     {
         /// <summary>
         /// Required designer variable.

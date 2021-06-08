@@ -44,15 +44,17 @@ namespace Store.App
             this.grdListEmployees.ContextMenuStrip = this.cntxMenuEmpl;
             this.grdListEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdListEmployees.Location = new System.Drawing.Point(0, 0);
-            this.grdListEmployees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grdListEmployees.MultiSelect = false;
             this.grdListEmployees.Name = "grdListEmployees";
             this.grdListEmployees.ReadOnly = true;
             this.grdListEmployees.RowHeadersWidth = 51;
             this.grdListEmployees.RowTemplate.Height = 25;
             this.grdListEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdListEmployees.Size = new System.Drawing.Size(734, 472);
+            this.grdListEmployees.Size = new System.Drawing.Size(642, 354);
             this.grdListEmployees.TabIndex = 0;
+            this.grdListEmployees.DoubleClick += new System.EventHandler(this.editToolStripMenuItem_Click);
             this.grdListEmployees.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grdListEmployees_MouseClick);
+            this.grdListEmployees.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grdListEmployees_MouseDown);
             // 
             // cntxMenuEmpl
             // 
@@ -61,28 +63,29 @@ namespace Store.App
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.cntxMenuEmpl.Name = "cntxMenu";
-            this.cntxMenuEmpl.Size = new System.Drawing.Size(123, 52);
+            this.cntxMenuEmpl.Size = new System.Drawing.Size(108, 48);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // EmployeesListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 472);
+            this.ClientSize = new System.Drawing.Size(642, 354);
             this.ContextMenuStrip = this.cntxMenuEmpl;
             this.Controls.Add(this.grdListEmployees);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EmployeesListForm";
             this.Text = "EmployeesListForm";
             ((System.ComponentModel.ISupportInitialize)(this.grdListEmployees)).EndInit();

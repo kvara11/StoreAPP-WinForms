@@ -54,5 +54,15 @@ namespace Store.App
                 contexMnuProducts.Show(grdProductList,new Point(e.X,e.Y));
             }
         }
+
+        private void grdProductList_MouseClick(object sender, MouseEventArgs e)
+        {
+            int position = grdProductList.HitTest(e.X, e.Y).RowIndex;
+
+            if (e.Button == MouseButtons.Right && position > 0)
+            {
+                contexMnuProducts.Show(grdProductList,new Point(e.X,e.Y));
+            }
+        }
     }
 }
