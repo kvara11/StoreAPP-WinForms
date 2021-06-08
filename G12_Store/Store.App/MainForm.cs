@@ -59,5 +59,11 @@ namespace Store.App
         {
             CreateMdiForm<ProductListForm>();
         }
+
+        private void mnuAddEmploye_Click(object sender, System.EventArgs e)
+        {
+            EmployeesListForm employeesListForm = new();
+            employeesListForm.Add();     
+        }
     }
 }
