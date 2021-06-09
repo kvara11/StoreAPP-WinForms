@@ -4,8 +4,8 @@ using Xunit;
 
 namespace Store.Tests
 {
-    public abstract class BaseRepositoryTest<TDomain, TRepository> : BaseTest
-        where TDomain : class
+    public abstract class BaseRepositoryTest<TDomain, TRepository> : BaseTest 
+        where TDomain : class, new()
         where TRepository : BaseRepository<TDomain>, new()
     {
         protected readonly TRepository _repository;

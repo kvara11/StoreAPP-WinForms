@@ -14,21 +14,26 @@ namespace Store.App
             Controls.RenderByPermissions();
         }
 
-        private void mnuEmployeesList_Click(object sender, System.EventArgs e)
-        {
-            CreateMdiForm<EmployeesListForm>();
-        }
-
-        private void CreateMdiForm<T>() where T: Form, new()
+        private void CreateMdiForm<T>() where T : Form, new()
         {
             var form = new T();
             form.MdiParent = this;
             form.Show();
         }
 
+        private void mnuEmployeesList_Click(object sender, System.EventArgs e)
+        {
+            CreateMdiForm<EmployeesListForm>();
+        }
+
+        private void mnuProductsList_Click(object sender, System.EventArgs e)
+        {
+            CreateMdiForm<ProductListForm>();
+        }
+
         private void mnuCascade_Click(object sender, System.EventArgs e)
         {
-            LayoutMdi(MdiLayout.Cascade); 
+            LayoutMdi(MdiLayout.Cascade);
         }
 
         private void mnuHorizontal_Click(object sender, System.EventArgs e)
@@ -51,19 +56,24 @@ namespace Store.App
 
         private void newToolStripButton_Click(object sender, System.EventArgs e)
         {
-            //((EmployeesListForm)ActiveMdiChild).Add();
             (ActiveMdiChild as IListForm)?.Add();
         }
 
-        private void mnuProductsList_Click(object sender, System.EventArgs e)
+        private void ShowAddForm<TForm, TList>()
+            where TForm : Form, new()
+            where TList : Form, IListForm
         {
-            CreateMdiForm<ProductListForm>();
+            if (new TForm().ShowDialog() == DialogResult.OK)
+            {
+                foreach (Form form in MdiChildren)
+                {
+                    //TODO: movifiqrot rogorme darefreshdes mxolod is forma romelic sachiroa.
+                    (form as TList)?.RefreshData();
+                }
+            }
         }
 
-        private void mnuAddEmploye_Click(object sender, System.EventArgs e)
-        {
-            EmployeesListForm employeesListForm = new();
-            employeesListForm.Add();     
-        }
+        private void mnuAddEmploye_Click(object sender, System.EventArgs e) => ShowAddForm<AddEmployeeForm, EmployeesListForm>();
+        
     }
 }
