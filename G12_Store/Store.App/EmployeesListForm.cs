@@ -31,10 +31,12 @@ namespace Store.App
 		private int SelectedID => (int)grdListEmployees.SelectedRows[0].Cells[0].Value;
 
 		private int RightClickedID = -1;
+
 		public void Add()
 		{
 			var employeeForm = new AddEmployeeForm();
 			employeeForm.ShowDialog();
+			RefreshData();
 		}
 
 		public void Edit()
@@ -42,7 +44,7 @@ namespace Store.App
 			int id = SelectedID;
 			var employeeForm = new AddEmployeeForm(id);
 			employeeForm.ShowDialog();
-			grdListEmployees.DataSource = _employeeRepository.Select().ToList();
+			RefreshData();
 		}
 
 		public void Delete()
@@ -54,7 +56,7 @@ namespace Store.App
 			{
 				var sad = new EmployeeRepository();
 				sad.Delete(id);
-				grdListEmployees.DataSource = _employeeRepository.Select().ToList();
+				RefreshData();
 			}
 		}
 
@@ -82,6 +84,11 @@ namespace Store.App
 				grdListEmployees.ClearSelection();
 				grdListEmployees.Rows[hti.RowIndex].Selected = true;
 			}
+		}
+
+        public void RefreshData()
+        {
+			grdListEmployees.DataSource = _employeeRepository.Select().ToList();
 		}
     }
 }

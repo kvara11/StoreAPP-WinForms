@@ -60,210 +60,200 @@ namespace Store.App
             // lblNewEmployeeFirstName
             // 
             this.lblNewEmployeeFirstName.AutoSize = true;
-            this.lblNewEmployeeFirstName.Location = new System.Drawing.Point(14, 29);
+            this.lblNewEmployeeFirstName.Location = new System.Drawing.Point(12, 22);
             this.lblNewEmployeeFirstName.Name = "lblNewEmployeeFirstName";
-            this.lblNewEmployeeFirstName.Size = new System.Drawing.Size(80, 20);
+            this.lblNewEmployeeFirstName.Size = new System.Drawing.Size(64, 15);
             this.lblNewEmployeeFirstName.TabIndex = 0;
             this.lblNewEmployeeFirstName.Text = "First Name";
             // 
             // lblNewEmployeeLastName
             // 
             this.lblNewEmployeeLastName.AutoSize = true;
-            this.lblNewEmployeeLastName.Location = new System.Drawing.Point(14, 69);
+            this.lblNewEmployeeLastName.Location = new System.Drawing.Point(12, 52);
             this.lblNewEmployeeLastName.Name = "lblNewEmployeeLastName";
-            this.lblNewEmployeeLastName.Size = new System.Drawing.Size(79, 20);
+            this.lblNewEmployeeLastName.Size = new System.Drawing.Size(63, 15);
             this.lblNewEmployeeLastName.TabIndex = 1;
             this.lblNewEmployeeLastName.Text = "Last Name";
             // 
             // txtNewEmployeeFirstName
             // 
-            this.txtNewEmployeeFirstName.Location = new System.Drawing.Point(126, 25);
-            this.txtNewEmployeeFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeeFirstName.Location = new System.Drawing.Point(110, 19);
             this.txtNewEmployeeFirstName.MaxLength = 100;
             this.txtNewEmployeeFirstName.Name = "txtNewEmployeeFirstName";
-            this.txtNewEmployeeFirstName.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeeFirstName.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeeFirstName.TabIndex = 2;
             // 
             // txtNewEmployeeLastName
             // 
-            this.txtNewEmployeeLastName.Location = new System.Drawing.Point(126, 64);
-            this.txtNewEmployeeLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeeLastName.Location = new System.Drawing.Point(110, 48);
             this.txtNewEmployeeLastName.MaxLength = 100;
             this.txtNewEmployeeLastName.Name = "txtNewEmployeeLastName";
-            this.txtNewEmployeeLastName.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeeLastName.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeeLastName.TabIndex = 3;
             // 
             // lblNewEmployeeBirthDate
             // 
             this.lblNewEmployeeBirthDate.AutoSize = true;
-            this.lblNewEmployeeBirthDate.Location = new System.Drawing.Point(14, 108);
+            this.lblNewEmployeeBirthDate.Location = new System.Drawing.Point(12, 81);
             this.lblNewEmployeeBirthDate.Name = "lblNewEmployeeBirthDate";
-            this.lblNewEmployeeBirthDate.Size = new System.Drawing.Size(76, 20);
+            this.lblNewEmployeeBirthDate.Size = new System.Drawing.Size(59, 15);
             this.lblNewEmployeeBirthDate.TabIndex = 4;
             this.lblNewEmployeeBirthDate.Text = "Birth Date";
             // 
             // lblNewEmployeePhone
             // 
             this.lblNewEmployeePhone.AutoSize = true;
-            this.lblNewEmployeePhone.Location = new System.Drawing.Point(14, 147);
+            this.lblNewEmployeePhone.Location = new System.Drawing.Point(12, 110);
             this.lblNewEmployeePhone.Name = "lblNewEmployeePhone";
-            this.lblNewEmployeePhone.Size = new System.Drawing.Size(50, 20);
+            this.lblNewEmployeePhone.Size = new System.Drawing.Size(41, 15);
             this.lblNewEmployeePhone.TabIndex = 11;
             this.lblNewEmployeePhone.Text = "Phone";
             // 
             // txtNewEmployeePhone2
             // 
-            this.txtNewEmployeePhone2.Location = new System.Drawing.Point(126, 181);
-            this.txtNewEmployeePhone2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeePhone2.Location = new System.Drawing.Point(110, 136);
             this.txtNewEmployeePhone2.MaxLength = 100;
             this.txtNewEmployeePhone2.Name = "txtNewEmployeePhone2";
-            this.txtNewEmployeePhone2.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeePhone2.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeePhone2.TabIndex = 14;
             // 
             // lblNewEmployeePhone2
             // 
             this.lblNewEmployeePhone2.AutoSize = true;
-            this.lblNewEmployeePhone2.Location = new System.Drawing.Point(14, 185);
+            this.lblNewEmployeePhone2.Location = new System.Drawing.Point(12, 139);
             this.lblNewEmployeePhone2.Name = "lblNewEmployeePhone2";
-            this.lblNewEmployeePhone2.Size = new System.Drawing.Size(62, 20);
+            this.lblNewEmployeePhone2.Size = new System.Drawing.Size(50, 15);
             this.lblNewEmployeePhone2.TabIndex = 13;
             this.lblNewEmployeePhone2.Text = "Phone 2";
             // 
             // txtNewEmployeeCurrentAddress
             // 
-            this.txtNewEmployeeCurrentAddress.Location = new System.Drawing.Point(126, 220);
-            this.txtNewEmployeeCurrentAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeeCurrentAddress.Location = new System.Drawing.Point(110, 165);
             this.txtNewEmployeeCurrentAddress.MaxLength = 100;
             this.txtNewEmployeeCurrentAddress.Name = "txtNewEmployeeCurrentAddress";
-            this.txtNewEmployeeCurrentAddress.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeeCurrentAddress.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeeCurrentAddress.TabIndex = 16;
             // 
             // lblNewEmployeeCurrentAddress
             // 
             this.lblNewEmployeeCurrentAddress.AutoSize = true;
-            this.lblNewEmployeeCurrentAddress.Location = new System.Drawing.Point(14, 224);
+            this.lblNewEmployeeCurrentAddress.Location = new System.Drawing.Point(12, 168);
             this.lblNewEmployeeCurrentAddress.Name = "lblNewEmployeeCurrentAddress";
-            this.lblNewEmployeeCurrentAddress.Size = new System.Drawing.Size(114, 20);
+            this.lblNewEmployeeCurrentAddress.Size = new System.Drawing.Size(92, 15);
             this.lblNewEmployeeCurrentAddress.TabIndex = 15;
             this.lblNewEmployeeCurrentAddress.Text = "Current Address";
             // 
             // txtNewEmployeeLegalAddress
             // 
-            this.txtNewEmployeeLegalAddress.Location = new System.Drawing.Point(126, 259);
-            this.txtNewEmployeeLegalAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeeLegalAddress.Location = new System.Drawing.Point(110, 194);
             this.txtNewEmployeeLegalAddress.MaxLength = 100;
             this.txtNewEmployeeLegalAddress.Name = "txtNewEmployeeLegalAddress";
-            this.txtNewEmployeeLegalAddress.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeeLegalAddress.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeeLegalAddress.TabIndex = 18;
             // 
             // lblNewEmployeeLegalAddress
             // 
             this.lblNewEmployeeLegalAddress.AutoSize = true;
-            this.lblNewEmployeeLegalAddress.Location = new System.Drawing.Point(14, 263);
+            this.lblNewEmployeeLegalAddress.Location = new System.Drawing.Point(12, 197);
             this.lblNewEmployeeLegalAddress.Name = "lblNewEmployeeLegalAddress";
-            this.lblNewEmployeeLegalAddress.Size = new System.Drawing.Size(102, 20);
+            this.lblNewEmployeeLegalAddress.Size = new System.Drawing.Size(80, 15);
             this.lblNewEmployeeLegalAddress.TabIndex = 17;
             this.lblNewEmployeeLegalAddress.Text = "Legal Address";
             // 
             // txtNewEmployeePostalCode
             // 
-            this.txtNewEmployeePostalCode.Location = new System.Drawing.Point(126, 297);
-            this.txtNewEmployeePostalCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeePostalCode.Location = new System.Drawing.Point(110, 223);
             this.txtNewEmployeePostalCode.MaxLength = 100;
             this.txtNewEmployeePostalCode.Name = "txtNewEmployeePostalCode";
-            this.txtNewEmployeePostalCode.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeePostalCode.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeePostalCode.TabIndex = 20;
             // 
             // lblNewEmployeePostalCode
             // 
             this.lblNewEmployeePostalCode.AutoSize = true;
-            this.lblNewEmployeePostalCode.Location = new System.Drawing.Point(14, 301);
+            this.lblNewEmployeePostalCode.Location = new System.Drawing.Point(12, 226);
             this.lblNewEmployeePostalCode.Name = "lblNewEmployeePostalCode";
-            this.lblNewEmployeePostalCode.Size = new System.Drawing.Size(87, 20);
+            this.lblNewEmployeePostalCode.Size = new System.Drawing.Size(70, 15);
             this.lblNewEmployeePostalCode.TabIndex = 19;
             this.lblNewEmployeePostalCode.Text = "Postal Code";
             // 
             // txtNewEmployeeEmail
             // 
-            this.txtNewEmployeeEmail.Location = new System.Drawing.Point(126, 336);
-            this.txtNewEmployeeEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeeEmail.Location = new System.Drawing.Point(110, 252);
             this.txtNewEmployeeEmail.MaxLength = 100;
             this.txtNewEmployeeEmail.Name = "txtNewEmployeeEmail";
-            this.txtNewEmployeeEmail.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeeEmail.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeeEmail.TabIndex = 22;
             // 
             // lblNewEmployeeEmail
             // 
             this.lblNewEmployeeEmail.AutoSize = true;
-            this.lblNewEmployeeEmail.Location = new System.Drawing.Point(14, 340);
+            this.lblNewEmployeeEmail.Location = new System.Drawing.Point(12, 255);
             this.lblNewEmployeeEmail.Name = "lblNewEmployeeEmail";
-            this.lblNewEmployeeEmail.Size = new System.Drawing.Size(46, 20);
+            this.lblNewEmployeeEmail.Size = new System.Drawing.Size(36, 15);
             this.lblNewEmployeeEmail.TabIndex = 21;
             this.lblNewEmployeeEmail.Text = "Email";
             // 
             // txtNewEmployeeIDnumber
             // 
-            this.txtNewEmployeeIDnumber.Location = new System.Drawing.Point(126, 375);
-            this.txtNewEmployeeIDnumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeeIDnumber.Location = new System.Drawing.Point(110, 281);
             this.txtNewEmployeeIDnumber.MaxLength = 100;
             this.txtNewEmployeeIDnumber.Name = "txtNewEmployeeIDnumber";
-            this.txtNewEmployeeIDnumber.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeeIDnumber.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeeIDnumber.TabIndex = 24;
             // 
             // lblNewEmployeeIDnumber
             // 
             this.lblNewEmployeeIDnumber.AutoSize = true;
-            this.lblNewEmployeeIDnumber.Location = new System.Drawing.Point(14, 379);
+            this.lblNewEmployeeIDnumber.Location = new System.Drawing.Point(12, 284);
             this.lblNewEmployeeIDnumber.Name = "lblNewEmployeeIDnumber";
-            this.lblNewEmployeeIDnumber.Size = new System.Drawing.Size(82, 20);
+            this.lblNewEmployeeIDnumber.Size = new System.Drawing.Size(65, 15);
             this.lblNewEmployeeIDnumber.TabIndex = 23;
             this.lblNewEmployeeIDnumber.Text = "ID Number";
             // 
             // txtNewEmployeeIDserialnumber
             // 
-            this.txtNewEmployeeIDserialnumber.Location = new System.Drawing.Point(126, 413);
-            this.txtNewEmployeeIDserialnumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeeIDserialnumber.Location = new System.Drawing.Point(110, 310);
             this.txtNewEmployeeIDserialnumber.MaxLength = 100;
             this.txtNewEmployeeIDserialnumber.Name = "txtNewEmployeeIDserialnumber";
-            this.txtNewEmployeeIDserialnumber.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeeIDserialnumber.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeeIDserialnumber.TabIndex = 26;
             // 
             // lblNewEmployeeIDserialnumber
             // 
             this.lblNewEmployeeIDserialnumber.AutoSize = true;
-            this.lblNewEmployeeIDserialnumber.Location = new System.Drawing.Point(14, 417);
+            this.lblNewEmployeeIDserialnumber.Location = new System.Drawing.Point(12, 313);
             this.lblNewEmployeeIDserialnumber.Name = "lblNewEmployeeIDserialnumber";
-            this.lblNewEmployeeIDserialnumber.Size = new System.Drawing.Size(101, 20);
+            this.lblNewEmployeeIDserialnumber.Size = new System.Drawing.Size(79, 15);
             this.lblNewEmployeeIDserialnumber.TabIndex = 25;
             this.lblNewEmployeeIDserialnumber.Text = "ID Serial Num";
             // 
             // lblNewEmployeeGender
             // 
             this.lblNewEmployeeGender.AutoSize = true;
-            this.lblNewEmployeeGender.Location = new System.Drawing.Point(14, 456);
+            this.lblNewEmployeeGender.Location = new System.Drawing.Point(12, 342);
             this.lblNewEmployeeGender.Name = "lblNewEmployeeGender";
-            this.lblNewEmployeeGender.Size = new System.Drawing.Size(57, 20);
+            this.lblNewEmployeeGender.Size = new System.Drawing.Size(45, 15);
             this.lblNewEmployeeGender.TabIndex = 29;
             this.lblNewEmployeeGender.Text = "Gender";
             // 
             // comboxNewEmployeeGender
             // 
+            this.comboxNewEmployeeGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboxNewEmployeeGender.FormattingEnabled = true;
             this.comboxNewEmployeeGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboxNewEmployeeGender.Location = new System.Drawing.Point(126, 452);
-            this.comboxNewEmployeeGender.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboxNewEmployeeGender.Location = new System.Drawing.Point(110, 339);
             this.comboxNewEmployeeGender.Name = "comboxNewEmployeeGender";
-            this.comboxNewEmployeeGender.Size = new System.Drawing.Size(201, 28);
+            this.comboxNewEmployeeGender.Size = new System.Drawing.Size(176, 23);
             this.comboxNewEmployeeGender.TabIndex = 30;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(126, 512);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOk.Location = new System.Drawing.Point(110, 384);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(95, 31);
+            this.btnOk.Size = new System.Drawing.Size(83, 23);
             this.btnOk.TabIndex = 31;
             this.btnOk.Text = "Add";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -271,38 +261,37 @@ namespace Store.App
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(227, 512);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(199, 384);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(99, 31);
+            this.btnCancel.Size = new System.Drawing.Size(87, 23);
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // txtNewEmployeePhone
             // 
-            this.txtNewEmployeePhone.Location = new System.Drawing.Point(126, 143);
-            this.txtNewEmployeePhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNewEmployeePhone.Location = new System.Drawing.Point(110, 107);
             this.txtNewEmployeePhone.MaxLength = 100;
             this.txtNewEmployeePhone.Name = "txtNewEmployeePhone";
-            this.txtNewEmployeePhone.Size = new System.Drawing.Size(201, 27);
+            this.txtNewEmployeePhone.Size = new System.Drawing.Size(176, 23);
             this.txtNewEmployeePhone.TabIndex = 14;
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(126, 103);
+            this.dateTimePicker.Location = new System.Drawing.Point(110, 77);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePicker.Size = new System.Drawing.Size(176, 23);
             this.dateTimePicker.TabIndex = 4;
             // 
-            // AddEmployeeFormcs
+            // AddEmployeeForm
             // 
             this.AcceptButton = this.btnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(350, 569);
+            this.ClientSize = new System.Drawing.Size(306, 427);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -330,10 +319,9 @@ namespace Store.App
             this.Controls.Add(this.lblNewEmployeeLastName);
             this.Controls.Add(this.lblNewEmployeeFirstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddEmployeeFormcs";
+            this.Name = "AddEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Employee";
             this.ResumeLayout(false);

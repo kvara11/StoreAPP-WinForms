@@ -55,6 +55,11 @@ namespace Store.App
             }
         }
 
+        public void RefreshData()
+        {
+            throw new NotImplementedException();
+        }
+
         private void grdProductList_MouseClick(object sender, MouseEventArgs e)
         {
             int position = grdProductList.HitTest(e.X, e.Y).RowIndex;

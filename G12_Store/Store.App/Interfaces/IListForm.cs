@@ -12,6 +12,6 @@ namespace Store.App.Interfaces
 		public void Add();
 		public void Edit();
 		public void Delete();
-
+		public void RefreshData();
 	}
 }
