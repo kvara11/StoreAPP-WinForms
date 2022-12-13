@@ -60,14 +60,14 @@ namespace Store.App
             throw new NotImplementedException();
         }
 
-        private void grdProductList_MouseClick(object sender, MouseEventArgs e)
-        {
-            int position = grdProductList.HitTest(e.X, e.Y).RowIndex;
+        //private void grdProductList_MouseClick(object sender, MouseEventArgs e)
+        //{
+        //    int position = grdProductList.HitTest(e.X, e.Y).RowIndex;
 
-            if (e.Button == MouseButtons.Right && position > 0)
-            {
-                contexMnuProducts.Show(grdProductList,new Point(e.X,e.Y));
-            }
-        }
+        //    if (e.Button == MouseButtons.Right && position > 0)
+        //    {
+        //        contexMnuProducts.Show(grdProductList,new Point(e.X,e.Y));
+        //    }
+        //}
     }
 }
